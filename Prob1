@@ -1,0 +1,19 @@
+import pandas as p
+
+data1 = {'Student': ['Ice Bear', 'Panda', 'Grizzly'],
+         'Math' :[80, 95, 79]}
+dfData1 = p.DataFrame (data1, columns = ['Student', 'Math'])
+data2 = {'Student': ['Ice Bear', 'Panda', 'Grizzly'],
+        'Electronics' :[85, 81, 83]}
+dfData2 = p.DataFrame (data2, columns = ['Student', 'Electronics'])
+data3 = {'Student': ['Ice Bear', 'Panda', 'Grizzly'],
+         'GEAS' :[90, 79, 93]}
+dfData3 = p.DataFrame (data3, columns = ['Student', 'GEAS'])
+data4 = {'Student': ['Ice Bear', 'Panda', 'Grizzly'],
+         'ESAT' :[93, 89, 99]}
+dfData4 = p.DataFrame (data4, columns = ['Student', 'ESAT'])
+
+Data5 = p.merge(dfData1, dfData2, how = 'outer')
+Data6 = p.merge(dfData3, dfData4, how = 'outer')
+
+MergedData = p.merge(Data5, Data6, how = 'outer')
